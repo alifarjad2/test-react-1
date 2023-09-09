@@ -6,9 +6,9 @@ import { List } from "./List";
 
 export default function FormAuth() {
   const[listAsli , setListAsli]=useState("")
-
+console.log(listAsli);
   const updateList = (v) => {
-setListAsli([...listAsli] , v)
+setListAsli (v)
   }
   
   return (
