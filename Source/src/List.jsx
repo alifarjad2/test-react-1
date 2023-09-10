@@ -1,6 +1,4 @@
-export default function List() {
-  const list = ["1", "item2", "3", "..."];
-
+export default function List({ list }) {
   return (
     <div>
       {/* here key really is index */}
