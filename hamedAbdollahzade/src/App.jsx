@@ -1,21 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Form } from "./Form";
 import { List } from "./List";
 
-export default function FormAuth() {
+export default function App() {
   const [listAsli, setListAsli] = useState([]);
-  console.log("List ASLI 2 = ",listAsli);
-  
+  console.log("List ASLI 2 = ", listAsli);
 
   return (
-    <>
-      <Form listAsli={listAsli} setListAsli = {setListAsli} />
-
-      {listAsli ? (
-        listAsli.map((item) => <List key={item.index} listAsli={item} />)
-      ) : (
-        <List />
-      )}
-    </>
+    <div>
+      
+        <Form listAsli={listAsli} setListAsli={setListAsli} />
+      
+      
+        <List listAsli={listAsli} setListAsli={setListAsli} />
+      
+    </div>
   );
 }
