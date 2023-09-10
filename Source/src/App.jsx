@@ -10,6 +10,7 @@ import List from "./List";
 //    thats mean first we need list state that will use in form. ok lets create list state
 //    we cant add list state in List cause its need in form then we must move it to nearest parent mean App
 //5- next we add form states (input and handle setList)
+//6- pass setList to list too for delete ones
 export default function App() {
   //return div cause it can get class for style and responsive and ...
   //u can replace with react fragment too but div is better
@@ -21,7 +22,8 @@ export default function App() {
   return (
     <div>
       <Form setList={setList} />
-      <List list={list} />
+
+      <List list={list} setList={setList} />
     </div>
   );
 }

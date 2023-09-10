@@ -1,4 +1,4 @@
-export default function List({ list }) {
+export default function List({ list, setList }) {
   return (
     <div>
       {/* here key really is index */}
@@ -9,10 +9,19 @@ export default function List({ list }) {
             <span> {index + 1} _ </span>
             {/* for delete */}
             {item}
-            <button className="mr-4"> X </button>
+            <button
+              className="mr-4"
+              //just delete one item from index
+              //for delete filter list to remove item in that index(key)
+              onClick={() => setList(list.filter((row, i) => i !== index))}
+            >
+              X
+            </button>
           </div>
         );
       })}
+
+      {list.length === 0 && "(list is empty)"}
     </div>
   );
 }
