@@ -1,15 +1,16 @@
 import FarawinInput from "./FarawinInput";
 import Button from "./Button";
 import { useRef, useState } from "react";
+import { useZustand } from "./App";
 
-export default function Form({ nameList, setNameList }) {
-  const [inp, setInp] = useState("");
-  const [firstUse, setFirstUse] = useState(true);
-
-  function nameValid(i) {
-    if (i.length < 3) return false;
-    return true;
-  }
+export default function Form() {
+  const inp = useZustand((state) => state.inp);
+  const setInp = useZustand((state) => state.setInp);
+  const nameList = useZustand((state) => state.nameList);
+  const firstUse = useZustand((state) => state.firstUse);
+  const setFirstUse = useZustand((state) => state.setFirstUse);
+  const setNameList = useZustand((state) => state.setFirstUse);
+  const nameValid = useZustand((state)=>state.nameValid)
 
   return (
     <div className="flex flex-col">
@@ -17,18 +18,13 @@ export default function Form({ nameList, setNameList }) {
         <label htmlFor="1" className="self-start">
           Name:
         </label>
-        <FarawinInput
-          vl={inp}
-          setInp={setInp}
-          setFirstUse={setFirstUse}
-        ></FarawinInput>
+        <FarawinInput />
         {!nameValid(inp) && !firstUse && (
           <p className="text-[10px] self-end pr-2 text-red-800">
             Type 3 Character Or More
           </p>
         )}
       </div>
-
       <Button
         inpValue={inp}
         setFirstUse={setFirstUse}
