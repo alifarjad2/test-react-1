@@ -1,6 +1,7 @@
 import Button from "./Button";
 import FarawinInput from "./FarawinInput";
 
+// استیت ها را در یک پراپ قرار میدادم و سپس دستراکشن می کردم
 export default function Form({msg, setMsg, list, setList}) {
 
   function handleMessage(event) {
@@ -8,6 +9,7 @@ export default function Form({msg, setMsg, list, setList}) {
     setMsg(msg);
   }
 
+  // پیغام در صورت خالی بودن لیست پیامها قرار نگرفته
   const sendToList = () => {
     msg && setList([ ...list, msg]);
   }
