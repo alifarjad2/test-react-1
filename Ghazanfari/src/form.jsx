@@ -28,7 +28,7 @@ export const Form = ()=>{
     }
 
     return (
-    <div className="h-full p-3 bg-slate-500 w-full flex flex-col items-center justify-start">
+    <div className="h-screen p-3 bg-slate-500 w-full flex flex-col items-center justify-start">
    
 
    <label htmlFor="input">Enter your name ...</label>
@@ -51,9 +51,9 @@ export const Form = ()=>{
 
     <ul 
         className="text-center bg-slate-400 overflow-auto rounded-lg text-white">
-        {list.map((Nname , index)=>{
+        {list.map((item , index)=>{
             return(
-                <List key={index} Nname={Nname.name} deleteName={deleteName} index={index} />
+                <List key={index} item={item} deleteName={deleteName} index={index} />
             )
         })}
            
