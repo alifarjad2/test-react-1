@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import '../App.css'
 
-
+// Main func
 export default function List(props){
-
+    // saving prop passed value in a variable
     const userTexts = props.textListing;
     console.log(userTexts)
-
+    // An arrow func for deleting input values from the array that we saved all values from user in that array
+    // and save it in the last variable that we have So we send it to the main state for delete it from the main array in the main state
     const handleDelete = (index) => {
         const updatedTexts = [...userTexts];
         updatedTexts.splice(index, 1);
