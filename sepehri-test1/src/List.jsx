@@ -4,6 +4,8 @@ export default function List({ list }) {
     <div className="w-80 bg-red-400 p-8 m-auto mt-5 rounded-md text-center">
       {list.map((row, index) => {
         return (
+          // عدم استفاده از key
+          // دکمه حذف هر پیام ندارد
           <div className="border-[1px] mb-1">
             <span>{(index + 1).toLocaleString('fa-ir')}</span>
             {row}
